@@ -1,4 +1,3 @@
-/* src/App.js */
 import React, { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
 import './App.css';
@@ -8,24 +7,205 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 const App = () => {
   const mapContainerRef = useRef(null);
 
-  // initialize map when component mounts
   useEffect(() => {
     const map = new mapboxgl.Map({
-      container: mapContainerRef.current,
-      // See style options here: https://docs.mapbox.com/api/maps/#styles
-      style: 'mapbox://styles/rhackshaw/ckkkt1i3w34kx17m9gugc2yzh',
-      center: [138.846, 38.854],
-      zoom: 5.2,
-      attributionControl: false
+        container: mapContainerRef.current,
+        style: 'mapbox://styles/rhackshaw/ckkkt1i3w34kx17m9gugc2yzh',
+        center: [135.1956, 34.6901],
+        zoom: 5.2,
+        minZoom: 7,
+        attributionControl: false
+    }); 
+
+    map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+    map.dragRotate.disable();
+    map.touchZoomRotate.disableRotation();
+    map.on('load', function () {
+        map.loadImage(
+            './marker.png',
+            function(error, image) {
+                if (error) throw error;
+                map.addImage('custom-marker', image);
+
+                map.addSource('route', {
+                    'type': 'geojson',
+                    'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                    'type': 'LineString',
+                    "coordinates": [
+                        [130.4014689, 33.5919164],
+                        [130.4024834, 33.5921441],
+                        [130.4018864, 33.5934911],
+                        [130.4089968, 33.6005018],
+                        [130.4089226, 33.6059336],
+                        [130.4089746, 33.61042640000001],
+                        [130.4190791, 33.6337808],
+                        [130.4230373, 33.6349296],
+                        [130.4879236, 33.6299333],
+                        [130.490708, 33.6330527],
+                        [130.9806264, 33.92195090000001],
+                        [130.9509481, 33.9738585],
+                        [131.0708429, 34.09471449999999],
+                        [131.4437862, 34.13060919999999],
+                        [131.454474, 34.1297539],
+                        [132.4522611306503, 34.38278891579711],
+                        [135.2141792, 34.8494172],
+                        [135.226283, 34.8442104],
+                        [135.49234655889848, 34.69131484578331],
+                        [135.5351875, 34.8075177],
+                        [135.6427341, 34.86375340000001],
+                        [135.75749136628474, 35.01619080260397],
+                        [135.9519751, 34.9800522],
+                        [135.9610851, 34.9785934],
+                        [136.3966462, 34.9158669],
+                        [136.8532555, 35.0528157],
+                        [137.180101, 35.0420257],
+                        [138.9154568, 35.2698919],
+                        [139.6187383, 35.6283068],
+                        [139.6257697, 35.627502],
+                        [139.6133189, 35.6702538],
+                        [139.6133395, 35.6719886],
+                        [139.6447575, 35.6680779],
+                        [139.6570534, 35.67170660000001],
+                        [139.6563286, 35.6725486],
+                        [139.6521202, 35.6772937],
+                        [139.6506377, 35.6760996],
+                        [139.6503054, 35.6761762],
+                        [139.75527600814758, 35.690612319896516]
+                        ]
+                        }
+                    }
+                })
+                map.addLayer({
+                    'id': 'route',
+                    'type': 'line',
+                    'source': 'route',
+                    'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                    },
+                    'paint': {
+                    'line-color': '#888',
+                    'line-width': 2
+                    }
+                })
+                
+                // Coordinates retrieved with Google Maps API call: https://maps.googleapis.com/maps/api/directions/json?origin=Fukuoka+Japan&destination=Tokyo+Japan&mode=driving&key=REACT_APP_GOOGLE_MAPS_TOKEN
+
+                map.addSource('places', {
+                    'type': 'geojson',
+                    'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                        'title': 'Fukuoka',
+                        'description':
+                        '<strong class="city">Fukuoka</strong><p class="description">November 19th - November 24th<br>We flew in initially from Auckland, NZ and used Seoul, SK as our transit location. From there, we travelled to Fukuoka where we would spend the first few days of our trip.</p><p class="description" style="text-align: center;">Click to see images</p>'
+                    },
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [130.40221975652344, 33.5834837539706]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                        'title': 'Hiroshima',
+                        'description':
+                        '<strong class="city">Hiroshima</strong><p class="description">November 24th - November 26th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        },
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [132.4522611306503, 34.48278891579711]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                        'title': 'Osaka',
+                        'description':
+                        '<strong class="city">Osaka</strong><p class="description">November 26th - November 30th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        },
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [135.49234655889848, 34.69131484578331]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                        'title': 'Kyoto',
+                        'description':
+                        '<strong class="city">Kyoto</strong><p class="description">November 29th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        },
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [135.75749136628474, 35.01619080260397]
+                        }
+                    },
+                    {
+                        'type': 'Feature',
+                        'properties': {
+                        'title': 'Tokyo',
+                        'description':
+                        '<strong class="city">Tokyo</strong><p class="description">December 1st - December 14th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        },
+                        'geometry': {
+                        'type': 'Point',
+                        'coordinates': [139.75527600814758, 35.690612319896516]
+                        }
+                    }
+                ]}    
+                })
+                
+                map.addLayer({
+                    'id': 'places',
+                    'type': 'symbol',
+                    'source': 'places',
+                    'layout': {
+                    'icon-image': 'custom-marker',
+                    'icon-allow-overlap': true,
+                    'text-field': "{title}",
+                    'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
+                        'text-offset': [0, 1.25],
+                        'text-anchor': 'top'
+        }
+                })
+            }
+        )
     });
 
-    // add navigation control (the +/- zoom buttons)
-    map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
+    var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
 
+    map.on('mouseenter', 'places', function (e) {
+        map.getCanvas().style.cursor = 'pointer';
+         
+        var coordinates = e.features[0].geometry.coordinates.slice();
+        var description = e.features[0].properties.description;
+         
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+
+        popup.setLngLat(coordinates).setHTML(description).addTo(map);
+        });
+         
+        map.on('mouseleave', 'places', function () {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+        });
+    
     return () => map.remove();
   }, []); 
 
-  return <div className="map-container" ref={mapContainerRef} />;
+  return <div className="map-container" ref={mapContainerRef} />
 };
 
 export default App;
