@@ -3,10 +3,10 @@ Mapbox/React web-application - visual representation of my last Japan trip (Nov 
 
 This site is currently a work in progress: there is a lot of work yet to be done.
 TO DO LIST:
-Media design queries - mobile compatability.
+Media design queries - mobile compatability. FOR NOW: want to add a "this site is a work in progress: please view on desktop for the best experience" disclaimer. 
 'Read more' clickable options for each marker - hiding overflowing descriptions to hovering markers will allow for better navigation (+ best practice).
 The clickable 'read more'/marker onclick events should open modal pop-ups that occupy the whole screen, yet can still easily be exited out.
-The modal pop-ups will contain all the information about the city + some images at the bottom the user can quickly skim through if so desired.
+The modal pop-ups will contain all the information about the city + some images at the bottom the user can quickly skim through if so desired.  
 
 # Getting Started with Create React App
 
