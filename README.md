@@ -1,6 +1,13 @@
 # japantrip
 Mapbox/React web-application - visual representation of my last Japan trip (Nov - Dec 2019).
 
+This site is currently a work in progress: there is a lot of work yet to be done.
+TO DO LIST:
+Media design queries - mobile compatability.
+'Read more' clickable options for each marker - hiding overflowing descriptions to hovering markers will allow for better navigation (+ best practice).
+The clickable 'read more'/marker onclick events should open modal pop-ups that occupy the whole screen, yet can still easily be exited out.
+The modal pop-ups will contain all the information about the city + some images at the bottom the user can quickly skim through if so desired.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
