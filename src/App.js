@@ -128,7 +128,7 @@ const App = () => {
                         'properties': {
                         'title': 'Osaka',
                         'description':
-                        '<strong class="city">Osaka</strong><p class="description">November 26th - November 30th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        '<strong class="city">Osaka</strong><p class="description">November 26th - November 30th<br>We stayed about 5 days or so in Osaka, with a single day trip to Kyoto in the middle of this period of time. We stayed at an Airbnb further out from the city, which proved to be insightful for the sake of understanding how vastly different life was in the suburbs. The suburbs were alarmingly quiet and quaint, with houses glued together with little to no breathing room. Any noise you made could be effortlessly heard by your neighbours. Contrastingly, the city was constantly overflowing with an incredibly diverse stream of both locals and tourists sharing spaces together. We visited the Osaka Castle, an owl and dog café, a ferris wheel, as well as a series of restaurants and bars around the primary strip of Dotonburi. </p><p class="description" style="text-align: center;">Click to see images</p>'
                         },
                         'geometry': {
                         'type': 'Point',
