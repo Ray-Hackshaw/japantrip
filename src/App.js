@@ -116,7 +116,7 @@ const App = () => {
                         'properties': {
                         'title': 'Hiroshima',
                         'description':
-                        '<strong class="city">Hiroshima</strong><p class="description">November 24th - November 26th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        '<strong class="city">Hiroshima</strong><p class="description">November 24th - November 26th<br>Hiroshima was our second major city we stayed in. Travelling from Fukuoka using the Japanese Shinkansen train line, we stayed in a capsule hotel in the city centre for 2 nights. Our activities included visiting the Peace Park Memorial, Peace Park Museum, and visiting the Hiroshima Castle. The city itself stood quietly during the day yet was filled with bars and restaurants that illuminated the night life.</p><p class="description" style="text-align: center;">Click to see images</p>'
                         },
                         'geometry': {
                         'type': 'Point',

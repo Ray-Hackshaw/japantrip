@@ -24,6 +24,23 @@
     z-index: 2;
 }
 
+.overlay_second {
+    font-family: 'Baloo Bhai 2', sans-serif;
+    border: 0.1rem solid white;
+    border-radius: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.26);
+    box-shadow: inset 0 0 20px rgba(218, 243, 243, 0.8);
+    width: auto;
+    height: auto;
+    margin: 0;
+    bottom: 2.5%;
+    right: 3%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    z-index: 2;
+}
+
 .city {
     font-family: 'Baloo Bhai 2', sans-serif;
     font-size: 1vw;
