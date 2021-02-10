@@ -140,7 +140,7 @@ const App = () => {
                         'properties': {
                         'title': 'Kyoto',
                         'description':
-                        '<strong class="city">Kyoto</strong><p class="description">November 29th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        '<strong class="city">Kyoto</strong><p class="description">November 29th<br>Although not a city we stayed at for any extended period of time, we decided to have a day trip in Kyoto. Taking the train directly from Osaka, we arrived and spent some time exploring around the Ōi River. We visited the Arashiyama Monkey park and nearby Bamboo Forest. In the future, I would love to spend more time in Kyoto and spend a few days staying in the city, as one day trip was not enough to properly appreciate the surrounding scenery and atmosphere.</p><p class="description" style="text-align: center;">Click to see images</p>'
                         },
                         'geometry': {
                         'type': 'Point',
