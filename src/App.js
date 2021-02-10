@@ -152,7 +152,7 @@ const App = () => {
                         'properties': {
                         'title': 'Tokyo',
                         'description':
-                        '<strong class="city">Tokyo</strong><p class="description">December 1st - December 14th<br>INSERT DESCRIPTION HERE</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        '<strong class="city">Tokyo</strong><p class="description">December 1st - December 14th<br>Our final stop and our longest stay for any city on our trip. We spent around 2 weeks in Tokyo, staying at 3 different locations, one hostel in Kita, one Airbnb on the outer banks of Shinjuku, and another hostel in the heart of Shinjuku. Originally we were planning to stay at 2 Airbnbs for our final accommodation, however changed our minds closer to the date. We all experienced Tokyo in our own special ways. To me it illustrated an interesting duality between a vast working metropolis fighting against tourist attractions and hotspots littered across the city. Through the bars and restaurants in the Golden Gai (red light district), to the shops and retail outlets sprawled out across Harujuku, to the temples and shrines and castles found throughout the city, Tokyo had something on every corner and it never ceased to captivate us. </p><p class="description" style="text-align: center;">Click to see images</p>'
                         },
                         'geometry': {
                         'type': 'Point',
