@@ -104,7 +104,7 @@ const App = () => {
                         'properties': {
                         'title': 'Fukuoka',
                         'description':
-                        '<strong class="city">Fukuoka</strong><p class="description">November 19th - November 24th<br>We flew in initially from Auckland, NZ and used Seoul, SK as our transit location. From there, we travelled to Fukuoka where we would spend the first few days of our trip.</p><p class="description" style="text-align: center;">Click to see images</p>'
+                        '<strong class="city">Fukuoka</strong><p class="description">November 19th - November 24th<br>We flew in initially from Auckland, NZ and used Seoul, SK as our transit location. From there, we travelled to Fukuoka where we would spend the first few days of our trip. We visited Fukuoka tower, a variety of different parks, and the Canal City Mall complex. The city acted as a great landing spot for us to work our way up the country. It provided us an authentic look into an everyday Japanese urban lifestyle, relatively stripped away from the standard tourist hotspots that heavily occupy cities such as Tokyo or Osaka. </p><p class="description" style="text-align: center;">Click to see images</p>'
                     },
                         'geometry': {
                         'type': 'Point',
