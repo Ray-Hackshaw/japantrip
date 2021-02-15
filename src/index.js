@@ -15,8 +15,7 @@ ReactDOM.render(
         {/* <div class="bio"><b>Clicking</b> them will bring up a gallery of images from the time we spent in that city. <i>(COMING SOON)</i></div> */}
     </div>
     <div class="overlay_second">
-        <a href="https://github.com/Ray-Hackshaw" target="_blank" rel="noopener noreferrer">Source</a>
-        
+        <a href="https://github.com/Ray-Hackshaw" target="_blank" rel="noopener noreferrer">source</a>
     </div>
     <App />
 
