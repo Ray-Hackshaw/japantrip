@@ -8,14 +8,16 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
 
 ReactDOM.render(
   <React.StrictMode>
-    <div class="overlay">
-        <h1 class="title">Tokyo 2019</h1>
-        <div class="bio">This is the route my friends and I took during our trip to Japan in late 2019. It outlines the major stops along the way, starting from Fukuoka and ending in Tokyo.</div>
-        <div class="bio"><b>Hovering</b> the markers will give a brief description of each city and our activities there.</div>
+    <div className="overlay theme">
+        <h1 className="title">Tokyo 2019</h1>
+        <div className="bio">This is the route my friends and I took during our trip to Japan in late 2019. It outlines the major stops along the way, starting from Fukuoka and ending in Tokyo.</div>
         {/* <div class="bio"><b>Clicking</b> them will bring up a gallery of images from the time we spent in that city. <i>(COMING SOON)</i></div> */}
     </div>
-    <div class="overlay_second">
+    <div className="overlay_second theme">
         <a href="https://github.com/Ray-Hackshaw" target="_blank" rel="noopener noreferrer">source</a>
+    </div>
+    <div id="modal" className="theme">
+        <div className="center"><b>Clicking</b> the markers will give a brief description of each city and our activities there.</div>
     </div>
     <App />
 

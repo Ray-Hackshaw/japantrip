@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect} from 'react';
 import mapboxgl from 'mapbox-gl';
 import './App.css';
 
@@ -6,19 +6,27 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const App = () => {
   const mapContainerRef = useRef(null);
-
+  
   useEffect(() => {
+    var width = window.innerWidth;
+    if (width < 1920) {
+        var map_center = [130.4017, 33.5902]; //Mobile center - Fukuoka
+    }
+    else {
+        var map_center = [135.153043689403, 35.09315131123772]; //Desktop center - Osaka/Kobe/Kyoto
+    }
     const map = new mapboxgl.Map({
         container: mapContainerRef.current,
         style: 'mapbox://styles/rhackshaw/ckkkt1i3w34kx17m9gugc2yzh',
-        center: [135.1956, 34.6901],
-        zoom: 5.2,
+        center: map_center,
+        zoom: 5,
+        bearingSnap: 0,
         minZoom: 7,
         attributionControl: false
     }); 
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-    map.dragRotate.disable();
+    // map.dragRotate.disable();
     // map.touchZoomRotate.disableRotation();
     map.on('load', function () {
         map.loadImage(
@@ -104,7 +112,7 @@ const App = () => {
                         'properties': {
                         'title': 'Fukuoka',
                         'description':
-                        '<strong class="city">Fukuoka</strong><p class="description">November 19th - November 24th<br>We flew in initially from Auckland, NZ and used Seoul, SK as our transit location. From there, we travelled to Fukuoka where we would spend the first few days of our trip. We visited Fukuoka tower, a variety of different parks, and the Canal City Mall complex. The city acted as a great landing spot for us to work our way up the country. It provided us an authentic look into an everyday Japanese urban lifestyle, relatively stripped away from the standard tourist hotspots that heavily occupy cities such as Tokyo or Osaka. </p>'
+                        '<div class="marker-board"><strong class="title center">Fukuoka | November 19th - November 24th</strong><p class="description">We flew in initially from Auckland, NZ and used Seoul, SK as our transit location. From there, we travelled to Fukuoka where we would spend the first few days of our trip. We visited Fukuoka tower, a variety of different parks, and the Canal City Mall complex. The city acted as a great landing spot for us to work our way up the country. It provided us an authentic look into an everyday Japanese urban lifestyle, relatively stripped away from the standard tourist hotspots that heavily occupy cities such as Tokyo or Osaka. </p></div>'
                     },
                         'geometry': {
                         'type': 'Point',
@@ -116,7 +124,7 @@ const App = () => {
                         'properties': {
                         'title': 'Hiroshima',
                         'description':
-                        '<strong class="city">Hiroshima</strong><p class="description">November 24th - November 26th<br>Hiroshima was our second major city we stayed in. Travelling from Fukuoka using the Japanese Shinkansen train line, we stayed in a capsule hotel in the city centre for 2 nights. Our activities included visiting the Peace Park Memorial, Peace Park Museum, and visiting the Hiroshima Castle. The city itself stood quietly during the day yet was filled with bars and restaurants that illuminated the night life.</p>'
+                        '<div class="marker-board"><strong class="title center">Hiroshima | November 24th - November 26th</strong><p class="description">Hiroshima was our second major city we stayed in. Travelling from Fukuoka using the Japanese Shinkansen train line, we stayed in a capsule hotel in the city centre for 2 nights. Our activities included visiting the Peace Park Memorial, Peace Park Museum, and visiting the Hiroshima Castle. The city itself stood quietly during the day yet was filled with bars and restaurants that illuminated the night life.</p></div>'
                         },
                         'geometry': {
                         'type': 'Point',
@@ -128,7 +136,7 @@ const App = () => {
                         'properties': {
                         'title': 'Osaka',
                         'description':
-                        '<strong class="city">Osaka</strong><p class="description">November 26th - November 30th<br>We stayed about 5 days or so in Osaka, with a single day trip to Kyoto in the middle of this period of time. We stayed at an Airbnb further out from the city, which proved to be insightful for the sake of understanding how vastly different life was in the suburbs. The suburbs were alarmingly quiet and quaint, with houses glued together with little to no breathing room. Any noise you made could be effortlessly heard by your neighbours. Contrastingly, the city was constantly overflowing with an incredibly diverse stream of both locals and tourists sharing spaces together. We visited the Osaka Castle, an owl and dog café, a ferris wheel, as well as a series of restaurants and bars around the primary strip of Dotonburi. </p>'
+                        '<div class="marker-board"><strong class="title center">Osaka | November 26th - November 30th</strong><p class="description">We stayed about 5 days or so in Osaka, with a single day trip to Kyoto in the middle of this period of time. We stayed at an Airbnb further out from the city, which proved to be insightful for the sake of understanding how vastly different life was in the suburbs. The suburbs were alarmingly quiet and quaint, with houses glued together with little to no breathing room. Any noise you made could be effortlessly heard by your neighbours. Contrastingly, the city was constantly overflowing with an incredibly diverse stream of both locals and tourists sharing spaces together. We visited the Osaka Castle, an owl and dog café, a ferris wheel, as well as a series of restaurants and bars around the primary strip of Dotonburi. </p></div>'
                         },
                         'geometry': {
                         'type': 'Point',
@@ -140,7 +148,7 @@ const App = () => {
                         'properties': {
                         'title': 'Kyoto',
                         'description':
-                        '<strong class="city">Kyoto</strong><p class="description">November 29th<br>Although not a city we stayed at for any extended period of time, we decided to have a day trip in Kyoto. Taking the train directly from Osaka, we arrived and spent some time exploring around the Ōi River. We visited the Arashiyama Monkey park and nearby Bamboo Forest. In the future, I would love to spend more time in Kyoto and spend a few days staying in the city, as one day trip was not enough to properly appreciate the surrounding scenery and atmosphere.</p>'
+                        '<div class="marker-board"><strong class="title center">Kyoto | November 29th</strong><p class="description">Although not a city we stayed at for any extended period of time, we decided to have a day trip in Kyoto. Taking the train directly from Osaka, we arrived and spent some time exploring around the Ōi River. We visited the Arashiyama Monkey park and nearby Bamboo Forest. In the future, I would love to spend more time in Kyoto and spend a few days staying in the city, as one day trip was not enough to properly appreciate the surrounding scenery and atmosphere.</p></div>'
                         },
                         'geometry': {
                         'type': 'Point',
@@ -152,7 +160,7 @@ const App = () => {
                         'properties': {
                         'title': 'Tokyo',
                         'description':
-                        '<strong class="city">Tokyo</strong><p class="description">December 1st - December 14th<br>Our final stop and our longest stay for any city on our trip. We spent around 2 weeks in Tokyo, staying at 3 different locations, one hostel in Kita, one Airbnb on the outer banks of Shinjuku, and another hostel in the heart of Shinjuku. Originally we were planning to stay at 2 Airbnbs for our final accommodation, however changed our minds closer to the date. We all experienced Tokyo in our own special ways. To me it illustrated an interesting duality between a vast working metropolis fighting against tourist attractions and hotspots littered across the city. Through the bars and restaurants in the Golden Gai (red light district), to the shops and retail outlets sprawled out across Harujuku, to the temples and shrines and castles found throughout the city, Tokyo had something on every corner and it never ceased to captivate us. </p>'
+                        '<div class="marker-board"><strong class="title center">Tokyo | December 1st - December 14th</strong><p class="description">Our final stop and our longest stay for any city on our trip. We spent around 2 weeks in Tokyo, staying at 3 different locations, one hostel in Kita, one Airbnb on the outer banks of Shinjuku, and another hostel in the heart of Shinjuku. Originally we were planning to stay at 2 Airbnbs for our final accommodation, however changed our minds closer to the date. We all experienced Tokyo in our own special ways. To me it illustrated an interesting duality between a vast working metropolis fighting against tourist attractions and hotspots littered across the city. Through the bars and restaurants in the Golden Gai (red light district), to the shops and retail outlets sprawled out across Harujuku, to the temples and shrines and castles found throughout the city, Tokyo had something on every corner and it never ceased to captivate us. </p></div>'
                         },
                         'geometry': {
                         'type': 'Point',
@@ -178,29 +186,37 @@ const App = () => {
             }
         )
     });
+    
 
-    var popup = new mapboxgl.Popup({
-        closeButton: false,
-        closeOnClick: false
+
+    map.on('mouseenter', 'places', function () {
+        map.getCanvas().style.cursor = 'pointer';
     });
 
-    map.on('mouseenter', 'places', function (e) {
-        map.getCanvas().style.cursor = 'pointer';
-         
+    map.on('click', 'places', function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
         var description = e.features[0].properties.description;
-         
+        map.easeTo({
+            zoom: 6,
+            bearing: 0,
+            bearingSnap: 0,
+            speed: 0.2,
+            curve: 0,
+            center: e.features[0].geometry.coordinates,
+            offset: [0, 100]
+        });
         while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
+        document.getElementById('modal').innerHTML = description;
+        // popup.setLngLat([135.1956, 34.6901]).setHTML(description).addTo(map);
+    });
 
-        popup.setLngLat(coordinates).setHTML(description).addTo(map);
-        });
-         
-        map.on('mouseleave', 'places', function () {
+    map.on('mouseleave', 'places', function () {
         map.getCanvas().style.cursor = '';
-        popup.remove();
-        });
+        // document.getElementById('modal').css('visibility', 'hidden');
+    });
+
     
     return () => map.remove();
   }, []); 

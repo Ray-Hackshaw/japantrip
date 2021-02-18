@@ -8,12 +8,15 @@
   right: 0;
 }
 
-.overlay {
+.theme {
     font-family: 'Baloo Bhai 2', sans-serif;
     border: 0.1rem solid white;
     border-radius: 0.2rem;
-    background-color: rgba(255, 255, 255, 0.26);
+    background-color: rgba(255, 255, 255, 0.829);
     box-shadow: inset 0 0 20px rgba(218, 243, 243, 0.8);
+}
+
+.overlay {   
     width: 15%;
     height: auto;
     margin: 0;
@@ -25,11 +28,6 @@
 }
 
 .overlay_second {
-    font-family: 'Baloo Bhai 2', sans-serif;
-    border: 0.1rem solid white;
-    border-radius: 0.2rem;
-    background-color: rgba(255, 255, 255, 0.26);
-    box-shadow: inset 0 0 20px rgba(218, 243, 243, 0.8);
     width: auto;
     height: auto;
     margin: 0;
@@ -41,14 +39,42 @@
     z-index: 2;
 }
 
+.marker-board {
+    width: auto;
+}
+
+.mapboxgl-popup-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: auto;
+}
+
+#modal {
+    position: relative;
+    text-align: left;
+    display: block;
+    z-index: 1;
+    margin: 1% auto;
+    width: 40%;
+    height: auto;
+    line-height: 1.2;
+    padding: 1%;
+    visibility: visible;
+}
+
+.center {
+    text-align: center;
+}
+
 .city {
-    font-family: 'Baloo Bhai 2', sans-serif;
-    font-size: 1vw;
+    font-size: 1.5vw;
+    text-align: center;
 }
 
 .description {
-    font-family: 'Baloo Bhai 2', sans-serif;
-    font-size: 0.8vw;
+    font-size: 1vw;
 }
 
 .bio {
@@ -60,8 +86,13 @@
 }
 
 .title {
+    font-weight: bold;
     font-size: 1vw;
     text-align: center;
+}
+
+.title .center {
+    font-size: 3vw;
 }
 
 a {
