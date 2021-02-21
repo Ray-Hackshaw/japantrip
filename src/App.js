@@ -198,7 +198,7 @@ const App = () => {
 
     map.on('click', 'places', function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
-        if (width < 1920 && coordinates[0] == 130.4022216796875) {
+        if (width < 1920 && coordinates[0] === 130.4022216796875) {
             console.log('Fukuoka')
             $('#mobile').css('visibility', 'hidden');
             $('#overlay').css('visibility', 'hidden');
