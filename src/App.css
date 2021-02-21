@@ -16,7 +16,7 @@
     box-shadow: inset 0 0 20px rgba(218, 243, 243, 0.8);
 }
 
-.overlay {   
+#overlay {   
     width: 15%;
     height: auto;
     margin: 0;
@@ -109,8 +109,7 @@ a {
         font-size: 3.5vw;
     }
 
-    .overlay {
-        background-color: rgba(255, 255, 255, 0.7);
+    #overlay {
         font-size: 3.5vw;
         width: 40%;
         height: auto;
@@ -124,7 +123,6 @@ a {
     }
 
     .overlay_second {
-        background-color: rgba(255, 255, 255, 0.7);
         font-size: 20px;
         width: auto;
         height: auto;
@@ -132,12 +130,21 @@ a {
         bottom: 2%;
         right: 13%;
         padding: 0 1%;
+    }
+
+    #modal {
+        margin-top: 3.5%;
+        margin-left: 45.25%;
+        width: 50%;
+        height: auto;
+        overflow-y: scroll;
+        padding: 1%;
+        visibility: visible;
     }
 }
 /* iPhone 6/7/8 + X/XS */
 @media only screen and (max-width: 375px) {
-    .overlay {
-        background-color: rgba(255, 255, 255, 0.7);
+    #overlay {
         font-size: 3.5vw;
         width: 40%;
         height: auto;
@@ -151,7 +158,6 @@ a {
     }
 
     .overlay_second {
-        background-color: rgba(255, 255, 255, 0.7);
         font-size: 20px;
         width: auto;
         height: auto;
@@ -159,6 +165,16 @@ a {
         bottom: 2%;
         right: 13%;
         padding: 0 1%;
+    }
+
+    #modal {
+        margin-top: 3.5%;
+        margin-left: 45.25%;
+        width: 50%;
+        height: auto;
+        overflow-y: scroll;
+        padding: 1%;
+        visibility: visible;
     }
 
 }
@@ -166,3 +182,5 @@ a {
 @media only screen and (max-width: 360px) {
 
 }
+
+/* iPad Media Design Queries needed */

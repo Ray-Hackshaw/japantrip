@@ -1,6 +1,7 @@
 import React, { useRef, useEffect} from 'react';
 import mapboxgl from 'mapbox-gl';
 import './App.css';
+import $ from 'jquery';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
@@ -9,11 +10,15 @@ const App = () => {
   
   useEffect(() => {
     var width = window.innerWidth;
+    var map_center;
+    var min_zoom;
     if (width < 1920) {
-        var map_center = [130.4017, 33.5902]; //Mobile center - Fukuoka
+        map_center = [130.4017, 33.5902]; //Mobile center - Fukuoka
+        min_zoom = 6.95;
     }
     else {
-        var map_center = [135.153043689403, 35.09315131123772]; //Desktop center - Osaka/Kobe/Kyoto
+        map_center = [135.153043689403, 35.09315131123772]; //Desktop center - Osaka/Kobe/Kyoto
+        min_zoom = 6.95;
     }
     const map = new mapboxgl.Map({
         container: mapContainerRef.current,
@@ -21,19 +26,19 @@ const App = () => {
         center: map_center,
         zoom: 5,
         bearingSnap: 0,
-        minZoom: 7,
+        minZoom: min_zoom,
         attributionControl: false
     }); 
 
     map.addControl(new mapboxgl.NavigationControl(), 'bottom-right');
-    // map.dragRotate.disable();
-    // map.touchZoomRotate.disableRotation();
     map.on('load', function () {
         map.loadImage(
             './marker.png',
             function(error, image) {
                 if (error) throw error;
                 map.addImage('custom-marker', image);
+
+                 // Coordinates retrieved with Google Maps API call: https://maps.googleapis.com/maps/api/directions/json?origin=Fukuoka+Japan&destination=Tokyo+Japan&mode=driving&key=REACT_APP_GOOGLE_MAPS_TOKEN
 
                 map.addSource('route', {
                     'type': 'geojson',
@@ -100,7 +105,6 @@ const App = () => {
                     }
                 })
                 
-                // Coordinates retrieved with Google Maps API call: https://maps.googleapis.com/maps/api/directions/json?origin=Fukuoka+Japan&destination=Tokyo+Japan&mode=driving&key=REACT_APP_GOOGLE_MAPS_TOKEN
 
                 map.addSource('places', {
                     'type': 'geojson',
@@ -186,8 +190,6 @@ const App = () => {
             }
         )
     });
-    
-
 
     map.on('mouseenter', 'places', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -195,13 +197,22 @@ const App = () => {
 
     map.on('click', 'places', function (e) {
         var coordinates = e.features[0].geometry.coordinates.slice();
+        if (width < 1920 && coordinates[0] == 130.4022216796875) {
+            console.log('Fukuoka')
+            $('#overlay').css('visibility', 'hidden');
+            $('#modal').css('margin-left', '2%');
+            $('#modal').css('margin-right', '2%');
+            $('#modal').css('width', 'auto');
+            $('#modal').css('font-size', '3vw');
+            // document.getElementById('overlay').innerHTML = '';
+        }
         var description = e.features[0].properties.description;
         map.easeTo({
-            zoom: 6,
+            zoom: 5,
             bearing: 0,
             bearingSnap: 0,
-            speed: 0.2,
-            curve: 0,
+            speed: 0.15,
+            curve: 2,
             center: e.features[0].geometry.coordinates,
             offset: [0, 100]
         });
@@ -209,12 +220,10 @@ const App = () => {
         coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
         }
         document.getElementById('modal').innerHTML = description;
-        // popup.setLngLat([135.1956, 34.6901]).setHTML(description).addTo(map);
     });
 
     map.on('mouseleave', 'places', function () {
         map.getCanvas().style.cursor = '';
-        // document.getElementById('modal').css('visibility', 'hidden');
     });
 
     
