@@ -15,6 +15,7 @@ const App = () => {
     if (width < 1920) {
         map_center = [130.4017, 33.5902]; //Mobile center - Fukuoka
         min_zoom = 6.95;
+        $('#mobile').css('visibility', 'visible');
     }
     else {
         map_center = [135.153043689403, 35.09315131123772]; //Desktop center - Osaka/Kobe/Kyoto
@@ -199,6 +200,7 @@ const App = () => {
         var coordinates = e.features[0].geometry.coordinates.slice();
         if (width < 1920 && coordinates[0] == 130.4022216796875) {
             console.log('Fukuoka')
+            $('#mobile').css('visibility', 'hidden');
             $('#overlay').css('visibility', 'hidden');
             $('#modal').css('margin-left', '2%');
             $('#modal').css('margin-right', '2%');

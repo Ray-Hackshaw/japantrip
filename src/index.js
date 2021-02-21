@@ -19,6 +19,10 @@ ReactDOM.render(
     <div id="modal" className="theme">
         <div className="center"><b>Clicking</b> the markers will give a brief description of each city and our activities there.</div>
     </div>
+    <div id="mobile" className="theme">
+        <p className="center"><b>Disclaimer:</b> this site is best viewed on Desktop devices; the mobile site is currently under development.</p>
+    </div>
+
     <App />
 
   </React.StrictMode>,
