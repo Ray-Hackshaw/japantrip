@@ -2,7 +2,9 @@ import React, { useRef, useEffect} from 'react';
 import mapboxgl from 'mapbox-gl';
 import './App.css';
 import $ from 'jquery';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 const App = () => {
