@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <div id="overlay" className="theme">
         <h1 className="title">Tokyo 2019</h1>
-        <div className="bio">This is the route my friends and I took during our trip to Japan in late 2019. It outlines the major stops along the way, starting from Fukuoka and ending in Tokyo.</div>
+        <div className="bio">This Is the route my friends and I took during our trip to Japan in late 2019. It outlines the major stops along the way, starting from Fukuoka and ending in Tokyo.</div>
         {/* <div class="bio"><b>Clicking</b> them will bring up a gallery of images from the time we spent in that city. <i>(COMING SOON)</i></div> */}
     </div>
     <div className="overlay_second theme">
