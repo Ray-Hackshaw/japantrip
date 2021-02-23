@@ -113,33 +113,31 @@ a {
 
 /* iPhone 6/7/8 PLUS */
 @media only screen and (max-width: 414px) {
-    .city {
-        font-size: 3.5vw;
-    }
-
-    .description {
-        font-size: 3.5vw;
-    }
-
-    .bio {
-        font-size: 4vw;
-    }
-
     #overlay {
         font-size: 3.5vw;
-        width: 40%;
+        width: 93%;
         height: auto;
         margin: 0;
         top: 2%;
         left: 3%;
     }
+
+    .bio {
+        font-size: 5vw;
+    }
+
     .title {
-        font-size: 3.8vw;
+        font-size: 6vw;
+        line-height: 0.8;
         text-align: center;
     }
 
+    .description {
+        font-size: 5vw;
+    }
+
     .overlay_second {
-        font-size: 20px;
+        font-size: 5vw;
         width: auto;
         height: auto;
         margin: 0;
@@ -149,13 +147,19 @@ a {
     }
 
     #modal {
-        margin-top: 3.5%;
-        margin-left: 45.25%;
-        width: 50%;
-        height: auto;
+        margin-top: 54%;
+        margin-left: 3%;
+        width: 40%;
+        height: 100%;
         padding: 1%;
         visibility: visible;
         overflow: hidden;
+    }
+
+    #mobile {
+        margin-left: 3%;
+        margin-top: 57%;
+        width: 93%;
     }
 }
 /* iPhone 6/7/8 + X/XS */
@@ -212,7 +216,103 @@ a {
 
 /* Galaxy S9/S9+ Android */
 @media only screen and (max-width: 360px) {
+    #overlay {
+        font-size: 3.5vw;
+        width: 93%;
+        height: auto;
+        margin: 0;
+        top: 2%;
+        left: 3%;
+    }
 
+    .bio {
+        font-size: 5vw;
+    }
+
+    .title {
+        font-size: 6vw;
+        line-height: 0.8;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 5vw;
+    }
+
+    .overlay_second {
+        font-size: 5vw;
+        width: auto;
+        height: auto;
+        margin: 0;
+        bottom: 2%;
+        right: 13%;
+        padding: 0 1%;
+    }
+
+    #modal {
+        margin-top: 54%;
+        margin-left: 3%;
+        width: 40%;
+        height: 100%;
+        padding: 1%;
+        visibility: visible;
+        overflow: hidden;
+    }
+
+    #mobile {
+        margin-left: 3%;
+        margin-top: 57%;
+        width: 93%;
+    }
 }
 
 /* iPad Media Design Queries needed */
+/* @media only screen and (max-width: 1024px) {
+    #overlay {
+        font-size: 3.5vw;
+        width: 93%;
+        height: auto;
+        margin: 0;
+        top: 2%;
+        left: 3.5%;
+    }
+
+    .bio {
+        font-size: 5vw;
+    }
+
+    .title {
+        font-size: 4vw;
+        line-height: 0.8;
+        text-align: center;
+    }
+
+    .description {
+        font-size: 3vw;
+    }
+
+    .overlay_second {
+        font-size: 5vw;
+        width: auto;
+        height: auto;
+        margin: 0;
+        bottom: 2%;
+        right: 7%;
+        padding: 0 1%;
+    }
+
+    #modal {
+        margin-top: 52%;
+        margin-left: 3.5%;
+        width: 40%;
+        height: 100%;
+        padding: 1%;
+        visibility: visible;
+        overflow: hidden;
+    }
+
+    #mobile {
+        margin-left: 3.5%;
+        margin-top: 52%;
+        width: 93%;
+    } */

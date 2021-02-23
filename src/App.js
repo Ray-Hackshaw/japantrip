@@ -134,7 +134,7 @@ function App() {
                           },
                           'geometry': {
                           'type': 'Point',
-                          'coordinates': [132.4522611306503, 34.48278891579711]
+                          'coordinates': [132.45214667744142, 34.38249539345438]
                           }
                       },
                       {
@@ -196,17 +196,21 @@ function App() {
       map.on('mouseenter', 'places', function () {
           map.getCanvas().style.cursor = 'pointer';
       });
+
+
+      map.on('mousemove', function (e) {
+        console.log(JSON.stringify(e.point) + '<br />' + JSON.stringify(e.lngLat.wrap()))
+        });
+
   
       map.on('click', 'places', function (e) {
           var coordinates = e.features[0].geometry.coordinates.slice();
-          if (width < 1920 && coordinates[0] === 130.4022216796875) {
-              console.log('Fukuoka')
+          if (width < 1920 && coordinates[0] === 130.4022216796875) { // If a Mobile device screen width AND if the marker for 'Fukuoka' has been clicked
               $('#mobile').css('visibility', 'hidden');
               $('#overlay').css('visibility', 'hidden');
               $('#modal').css('margin-left', '2%');
               $('#modal').css('margin-top', '2%');
               $('#modal').css('padding', '2%');
-
               $('#modal').css('margin-right', '3%');
               $('#modal').css('width', 'auto');
               $('#modal').css('font-size', '3vw');
