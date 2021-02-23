@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+html, body {margin: 0; height: 100%; overflow: hidden}
 
 .map-container {
   position: absolute;
@@ -39,9 +40,6 @@
     z-index: 2;
 }
 
-.marker-board {
-    width: auto;
-}
 
 .mapboxgl-popup-content {
     position: relative;
@@ -65,7 +63,7 @@
 }
 
 .center {
-    text-align: center;
+    text-align: center !important;
 }
 
 .city {
@@ -155,28 +153,38 @@ a {
         margin-left: 45.25%;
         width: 50%;
         height: auto;
-        overflow-y: scroll;
         padding: 1%;
         visibility: visible;
+        overflow: hidden;
     }
 }
 /* iPhone 6/7/8 + X/XS */
 @media only screen and (max-width: 375px) {
     #overlay {
         font-size: 3.5vw;
-        width: 40%;
+        width: 93%;
         height: auto;
         margin: 0;
         top: 2%;
         left: 3%;
     }
+
+    .bio {
+        font-size: 5vw;
+    }
+
     .title {
-        font-size: 3.8vw;
+        font-size: 6vw;
+        line-height: 0.8;
         text-align: center;
     }
 
+    .description {
+        font-size: 5vw;
+    }
+
     .overlay_second {
-        font-size: 20px;
+        font-size: 5vw;
         width: auto;
         height: auto;
         margin: 0;
@@ -186,16 +194,22 @@ a {
     }
 
     #modal {
-        margin-top: 3.5%;
-        margin-left: 45.25%;
-        width: 50%;
-        height: auto;
-        overflow-y: scroll;
+        margin-top: 54%;
+        margin-left: 3%;
+        width: 40%;
+        height: 100%;
         padding: 1%;
         visibility: visible;
+        overflow: hidden;
     }
 
+    #mobile {
+        margin-left: 3%;
+        margin-top: 57%;
+        width: 93%;
+    }
 }
+
 /* Galaxy S9/S9+ Android */
 @media only screen and (max-width: 360px) {
 
