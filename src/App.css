@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+
 html, body {margin: 0; height: 100%; overflow: hidden}
 
 .map-container {
@@ -67,12 +67,12 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 .city {
-    font-size: 1.5vw;
+    font-size: 15px;
     text-align: center;
 }
 
 .description {
-    font-size: 1vw;
+    font-size: 0.8vw;
 }
 
 .bio {
@@ -80,7 +80,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     padding-right: 2%;
     padding-bottom: 5%;
     width: auto;
-    line-height: 1.2;
+    font-size: 0.8vw;
 }
 
 .title {
