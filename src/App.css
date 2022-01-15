@@ -72,7 +72,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 .description {
-    font-size: 0.8vw;
+    font-size: 1rem;
 }
 
 .bio {
@@ -80,17 +80,17 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     padding-right: 2%;
     padding-bottom: 5%;
     width: auto;
-    font-size: 0.8vw;
+    font-size: 1rem;
 }
 
 .title {
     font-weight: bold;
-    font-size: 1vw;
+    font-size: 2rem;
     text-align: center;
 }
 
 .title .center {
-    font-size: 3vw;
+    font-size: 2rem;
 }
 
 a {
@@ -123,17 +123,17 @@ a {
     }
 
     .bio {
-        font-size: 5vw;
+        font-size: 1rem;
     }
 
     .title {
-        font-size: 6vw;
+        font-size: 1.3rem;
         line-height: 0.8;
         text-align: center;
     }
 
     .description {
-        font-size: 5vw;
+        font-size: 1rem;
     }
 
     .overlay_second {
@@ -174,7 +174,7 @@ a {
     }
 
     .bio {
-        font-size: 5vw;
+        font-size: 1rem;
     }
 
     .title {
@@ -184,7 +184,7 @@ a {
     }
 
     .description {
-        font-size: 5vw;
+        font-size: 1rem;
     }
 
     .overlay_second {
@@ -226,7 +226,7 @@ a {
     }
 
     .bio {
-        font-size: 5vw;
+        font-size: 1rem;
     }
 
     .title {
@@ -236,7 +236,7 @@ a {
     }
 
     .description {
-        font-size: 5vw;
+        font-size: 1rem;
     }
 
     .overlay_second {
